@@ -3,18 +3,93 @@ const TABULATOR_ = {
     table: ""
 };
 
-document.addEventListener("load", (event) => {
-    
+window.addEventListener("load", (event) => {
+    let forms = document.querySelectorAll(".certificate-forms");
+
+    forms.forEach(form => {
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let formData = Object.fromEntries(
+                                new FormData(document.querySelector("#" + event.target.id)).entries()
+                            );
+
+            switch(event.target.id){
+                case 'baptism-form': {
+                    console.log(formData);
+                    /*postData("/marbisu/form/baptism", formData)
+                        .then((data) => {
+                            console.log(data);
+
+                            // notify yes or no
+                            if(data.status == 0)
+                                appendAlert('Failed to add record.', 'danger');
+                            else if(data.status == 1)
+                                appendAlert('Successfully added record.', 'success');
+                        });*/
+                        appendAlert('Failed to add record.', 'danger');
+                    break;
+                }
+                case 'communion-form': {
+                    console.log(formData);
+                    // postData("/marbisu/form/baptism", formData)
+                    //     .then((data) => {
+                    //         // notify yes or no
+                    //         console.log(data);
+                    //     });
+                    appendAlert('Failed to add record.', 'danger');
+                    break;
+                }
+                case 'confirmation-form': {
+                    console.log(formData);
+                    // postData("/marbisu/form/baptism", formData)
+                    //     .then((data) => {
+                    //         // notify yes or no
+                    //         console.log(data);
+                    //     });
+                    appendAlert('Failed to add record.', 'danger');
+                    break;
+                }
+                case 'marriage-form': {
+                    console.log(formData);
+                    // postData("/marbisu/form/baptism", formData)
+                    //     .then((data) => {
+                    //         // notify yes or no
+                    //         console.log(data);
+                    //     });
+                    appendAlert('Failed to add record.', 'danger');
+                    break;
+                }
+                case 'death-form': {
+                    console.log(formData);
+                    // postData("/marbisu/form/baptism", formData)
+                    //     .then((data) => {
+                    //         // notify yes or no
+                    //         console.log(data);
+                    //     });
+                    appendAlert('Failed to add record.', 'danger');
+                    break;
+                }
+                default: {
+                    
+                }
+            }
+        });
+    })
 });
 
 function getBaptism(){
     // make ajax request
 
     let tabulatorNode = document.querySelector("#tabulator-table");
+    let formsNode = document.querySelector("#forms");
     let isHidden = tabulatorNode.style.display === 'none' ? true : false;
      
-    if(isHidden)
+    if(isHidden){
         tabulatorNode.style.display = 'block';
+        formsNode.style.display = 'none';
+    }
+        
 
     // then display tabulator
     TABULATOR_.table = new Tabulator("#" + TABLE_ID, {
@@ -46,8 +121,10 @@ function getFirstHolyCommunion(){
     let tabulatorNode = document.querySelector("#tabulator-table");
     let isHidden = tabulatorNode.style.display === 'none' ? true : false;
      
-    if(isHidden)
+    if(isHidden){
         tabulatorNode.style.display = 'block';
+        formsNode.style.display = 'none';
+    }
 
     // then display tabulator
     TABULATOR_.table = new Tabulator("#" + TABLE_ID, {
@@ -78,8 +155,10 @@ function getConfirmation(){
     let tabulatorNode = document.querySelector("#tabulator-table");
     let isHidden = tabulatorNode.style.display === 'none' ? true : false;
      
-    if(isHidden)
+    if(isHidden){
         tabulatorNode.style.display = 'block';
+        formsNode.style.display = 'none';
+    }
 
     // then display tabulator
     TABULATOR_.table = new Tabulator("#" + TABLE_ID, {
@@ -110,8 +189,10 @@ function getMarriage(){
     let tabulatorNode = document.querySelector("#tabulator-table");
     let isHidden = tabulatorNode.style.display === 'none' ? true : false;
      
-    if(isHidden)
+    if(isHidden){
         tabulatorNode.style.display = 'block';
+        formsNode.style.display = 'none';
+    }
 
     // then display tabulator
     TABULATOR_.table = new Tabulator("#" + TABLE_ID, {
@@ -153,8 +234,10 @@ function getDeath(){
     let tabulatorNode = document.querySelector("#tabulator-table");
     let isHidden = tabulatorNode.style.display === 'none' ? true : false;
      
-    if(isHidden)
+    if(isHidden){
         tabulatorNode.style.display = 'block';
+        formsNode.style.display = 'none';
+    }
 
     // then display tabulator
     TABULATOR_.table = new Tabulator("#" + TABLE_ID, {
@@ -183,11 +266,11 @@ function toggleForms(nodeId){
     let tabulatorNode = document.getElementById("tabulator-table");
     let formNode = document.getElementById("forms");
     let nodes = [
-        document.getElementById("baptism"),
-        document.getElementById("communion"),
-        document.getElementById("confirmation"),
-        document.getElementById("marriage"),
-        document.getElementById("death"),
+        document.getElementById("baptism-form"),
+        document.getElementById("communion-form"),
+        document.getElementById("confirmation-form"),
+        document.getElementById("marriage-form"),
+        document.getElementById("death-form"),
     ];
     
     tabulatorNode.style.display = 'none';
@@ -202,31 +285,66 @@ function toggleForms(nodeId){
 }
 function showBaptismForm(){
     // show form
-    let formNode = document.querySelector("#baptism");
+    let formNode = document.querySelector("#baptism-form");
 
     toggleForms(formNode.id);
 }
 function showFirstHolyCommunionForm(){
     // show form
-    let formNode = document.querySelector("#communion");
+    let formNode = document.querySelector("#communion-form");
     
     toggleForms(formNode.id);
 }
 function showConfirmationForm(){
     // show form
-    let formNode = document.querySelector("#confirmation");
+    let formNode = document.querySelector("#confirmation-form");
     
     toggleForms(formNode.id);
 }
 function showMarriageForm(){
     // show form
-    let formNode = document.querySelector("#marriage");
+    let formNode = document.querySelector("#marriage-form");
     
     toggleForms(formNode.id);
 }
 function showDeathForm(){
     // show form
-    let formNode = document.querySelector("#death");
+    let formNode = document.querySelector("#death-form");
     
     toggleForms(formNode.id);
 }
+function appendAlert(message,type){
+    const alertDiv = document.getElementById("alert-div");
+    alertDiv.classList.toggle("show");
+
+    let alert = 
+        `<div id="alert">
+            <div class="alert alert-${type}" role="alert">
+                ${message}
+            </div>
+        </div>`;
+
+    alertDiv.innerHTML = alert;
+    
+    setTimeout(() => {
+        alertDiv.classList.remove("show");
+        alertDiv.classList.add('hide', 'fade');
+        alertDiv.innerHTML = '';
+    }, 2000);
+}
+async function postData(url = "", data = {}){
+    const response = await fetch(url, {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+    });
+    return response.json();
+}
+

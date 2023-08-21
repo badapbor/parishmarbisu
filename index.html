@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit </title>
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/tabulator_semanticui.css">
@@ -19,7 +20,6 @@
             background-color: antiquewhite;
         }
     </style>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 </head>
 <body>
     <div class="container-fluid h-100">
@@ -60,526 +60,583 @@
             <div class="col col-sm-10">
                 <div class="row gx-0 rounded" style="background-color: white">
                     <div class="col d-flex align-items-center border rounded justify-content-end" style="height: 40px;">
-                        <div class="d-flex border-end">
-                            
+                        <div class="ms-4 me-4">
+                            <div>
+                                <i class="bi bi-printer-fill"></i>
+                            </div>
                         </div>
                         <div>
                             
                         </div>
-                        <div>
+                        <div class="ms-auto">
 
                         </div>
                     </div>
                 </div>
-                <div class="row mt-2">
-                    <div class="col">
-                        <div id="tabulator-table" class="border rounded p-1" style="display: none;">
+                <div class="row mt-2 w-100">
+                    <div class="col w-100">
+                        <div id="tabulator-table" class="border rounded p-1 m-0" style="display: none;">
                         </div>
                         <div id="forms" class="border rounded p-4" style="display: none;">
-                            <div class="container" id="marriage" style="display: none;">
-                                <div class="row m-4">
-                                    <div class="col">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="h4">Ka Form Kyntiew Kurim</div>
+                            <div class="z-1 position-sticky rounded-3 w-50 start-100 show" style="top: 2%" id="alert-div"></div>
+                            <form class="certificate-forms" id="marriage-form" style="display: none;">
+                                <div class="container">
+                                    <div class="row m-4">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="h4">Ka Form Kyntiew Kurim</div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Place And Date</label>
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="text" name="placeAndDate" id="placeAndDate" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-3 text-center">
-                                        <label class="form-label" for="balangShnong"><b>Kynthei</b></label>
-                                    </div>
-                                    <div class="col-3 text-center">
-                                        <label class="form-label" for="balangShnong"><b>Shynrang</b></label>
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Name</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleName" name="femaleName">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleName" name="maleName">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Date of Birth</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="date" class="form-control" id="femaleDateOfBirth" name="femaleDateOfBirth">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="date" class="form-control" id="maleDateOfBirth" name="maleDateOfBirth">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Religion</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleReligion" name="femaleReligion">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleReligion" name="maleReligion">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Nationality</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleNationality" name="femaleNationality">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleNationality" name="maleNationality">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Profession</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleProfession" name="femaleProfession">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleProfession" name="maleProfession">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Residence</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleResidence" name="femaleResidence">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleResidence" name="maleResidence">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Father's Name</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleFatherName" name="femaleFatherName">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleFatherName" name="maleFatherName">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Mother's Name</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleMotherName" name="femaleMotherName">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleMotherName" name="maleMotherName">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">First Witness</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleFirstWitness" name="femaleFirstWitness">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleFirstWitness" name="maleFirstWitness">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Second Witness</label>
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="femaleSecondWitness" name="femaleSecondWitness">
-                                    </div>
-                                    <div class="col-3">
-                                        <input type="text" class="form-control" id="maleSecondWitness" name="maleSecondWitness">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Officiating Priest</label>
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="text" class="form-control" id="officiatingPriest" name="officiatingPriest">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-2">
-                                        <label class="form-label" for="balangShnong">Remarks</label>
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="text" class="form-control" id="remarks" name="remarks">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <div class="d-flex justify-content-center">
-                                            <input class="btn btn-success w-50" type="submit" value="Save">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Place And Date</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="placeAndDate" name="placeAndDate">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="container" id="death" style="display: none;">
-                                <div class="row m-4">
-                                    <div class="col">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="h4">Ka Form Ba Iap Briew</div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-3 text-center">
+                                            <label class="form-label" for="balangShnong"><b>Kynthei</b></label>
+                                        </div>
+                                        <div class="col-3 text-center">
+                                            <label class="form-label" for="balangShnong"><b>Shynrang</b></label>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4"> 
-                                        <label class="form-label" for="balangShnong">Balang Shnong</label>
-                                        <select class="form-control" name="balangShnong" id="balangShnong">
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4"> 
-                                        <label class="form-label" for="name">Name and Surname</label>
-                                        <input class="form-control" type="text" id="name">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateOfBirth">Date of Birth</label>
-                                        <input class="form-control" type="date" id="dateOfBirth">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="gender">Gender</label>
-                                        <select class="form-control" name="gender" id="gender">
-                                        </select>
-                                    </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="profession">Profession</label>
-                                        <input class="form-control" type="text" id="profession">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="village">Village</label>
-                                        <input class="form-control" type="text" id="village">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="causeOfDeath">Cause of Death</label>
-                                        <input class="form-control" type="text" id="causeOfDeath">
-                                    </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateDiedOn">Date Died On </label>
-                                        <input class="form-control" type="date" id="dateDiedOn">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateBuriedOn">Date Buried On </label>
-                                        <input class="form-control" type="date" id="dateBuriedOn">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="relativeName">Relative's Name and Surname</label>
-                                        <input class="form-control" type="text" id="relativeName">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="isAnointed">Is Anointed</label>
-                                        <select class="form-control" id="isAnointed">
-                                            <option value="true">Yes</option>
-                                            <option value="false">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="officiatingPriest">Officiating Minister</label>
-                                        <input class="form-control" type="text" id="officiatingPriest">
-                                    </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <div class="d-flex justify-content-center">
-                                            <input class="btn btn-success" type="submit" value="Save">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Name</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleName" name="femaleName">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleName" name="maleName">
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="container" id="communion" style="display: none;">
-                                <div class="row m-4">
-                                    <div class="col">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="h4">Ka Form Communion</div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Date of Birth</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="date" class="form-control" id="femaleDateOfBirth" name="femaleDateOfBirth">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="date" class="form-control" id="maleDateOfBirth" name="maleDateOfBirth">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="balangShnong">Balang Shnong</label>
-                                        <select class="form-control" name="balangShnong" id="balangShnong" onchange="loadRangbahBalang()">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Religion</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleReligion" name="femaleReligion">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleReligion" name="maleReligion">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Nationality</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleNationality" name="femaleNationality">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleNationality" name="maleNationality">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Profession</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleProfession" name="femaleProfession">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleProfession" name="maleProfession">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Residence</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleResidence" name="femaleResidence">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleResidence" name="maleResidence">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Father's Name</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleFatherName" name="femaleFatherName">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleFatherName" name="maleFatherName">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Mother's Name</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleMotherName" name="femaleMotherName">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleMotherName" name="maleMotherName">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">First Witness</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleFirstWitness" name="femaleFirstWitness">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleFirstWitness" name="maleFirstWitness">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Second Witness</label>
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="femaleSecondWitness" name="femaleSecondWitness">
+                                        </div>
+                                        <div class="col-3">
+                                            <input type="text" class="form-control" id="maleSecondWitness" name="maleSecondWitness">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Officiating Priest</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="officiatingPriest" name="officiatingPriest">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-2">
+                                            <label class="form-label" for="balangShnong">Remarks</label>
+                                        </div>
+                                        <div class="col-6">
+                                            <input type="text" class="form-control" id="remarks" name="remarks">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
                                         
-                                        </select>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="row m-4 justify-content-center">
+                                        <input type="number" name="registerNo" id="registerNo" hidden>
+                                        <div class="col-4">
+                                            <div><b>Register No: </b><i><span>51234</span></i></div>
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="name">Name and Surname</label>
-                                        <input class="form-control" type="text" id="name">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateOfBirth">Date of Birth</label>
-                                        <input class="form-control" type="date" id="dateOfBirth">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="gender">Gender</label>
-                                        <select class="form-control" name="gender" id="gender">
-                                          
-                                        </select>
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="currentAddress">Current Address</label>
-                                        <input class="form-control" type="text" id="currentAddress">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateReceivedCommunion">Date Received Communion On</label>
-                                        <input class="form-control" type="date" id="dateReceivedCommunion">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateBaptistOn">Date Baptized On</label>
-                                        <input class="form-control" type="date" id="dateBaptistOn">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="placeReceivedCommunionAt">Place Received Communion At</label>
-                                        <input class="form-control" type="text" id="placeReceivedCommunionAt">
-                                    </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="fatherName">Father's Name and Surname</label>
-                                        <input class="form-control" type="text" id="fatherName">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="motherName">Mother's Name and Surname</label>
-                                        <input class="form-control" type="text" id="motherName">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="godparentName">Sponsor's Name and Surname</label>
-                                        <input class="form-control" type="text" id="godparentName">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="officiatingPriest">Officiating Minister</label>
-                                        <input class="form-control" type="text" id="officiatingPriest">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <div class="d-flex justify-content-center">
-                                            <input class="btn btn-success" type="submit" value="Save">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <div class="d-flex justify-content-center">
+                                                <input class="btn btn-success w-50" type="submit" value="Save">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="container" id="confirmation" style="display: none;">
-                                <div class="row m-4">
-                                    <div class="col">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="h4">Ka Form Jingpynskhem</div>
+                            </form>
+                            <form class="certificate-forms" id="death-form" style="display: none;">
+                                <div class="container">
+                                    <div class="row m-4">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="h4">Ka Form Ba Iap Briew</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4"> 
+                                            <label class="form-label" for="balangShnong">Balang Shnong</label>
+                                            <input type="text" class="form-control" id="balangShnong" name="balangShnong">
+                                        </div>
+                                        <div class="col-4">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4"> 
+                                            <label class="form-label" for="name">Name and Surname</label>
+                                            <input class="form-control" type="text" id="name" name="name">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateOfBirth">Date of Birth</label>
+                                            <input class="form-control" type="date" id="dateOfBirth" name="dateOfBirth">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="gender">Gender</label>
+                                            <input type="text" class="form-control" id="gender" name="gender">
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="profession">Profession</label>
+                                            <input class="form-control" type="text" id="profession" name="profession">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="village">Village</label>
+                                            <input class="form-control" type="text" id="village" name="village">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="causeOfDeath">Cause of Death</label>
+                                            <input class="form-control" type="text" id="causeOfDeath" name="causeOfDeath">
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateDiedOn">Date Died On </label>
+                                            <input class="form-control" type="date" id="dateDiedOn" name="dateDiedOn">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateBuriedOn">Date Buried On </label>
+                                            <input class="form-control" type="date" id="dateBuriedOn" name="dateBuriedOn">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="relativeName">Relative's Name and Surname</label>
+                                            <input class="form-control" type="text" id="relativeName" name="relativeName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="isAnointed">Is Anointed</label>
+                                            <select class="form-control" id="isAnointed" name="isAnointed">
+                                                <option value="true">Yes</option>
+                                                <option value="false">No</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="officiatingPriest">Officiating Minister</label>
+                                            <input class="form-control" type="text" id="officiatingPriest" name="officiatingPriest">
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <input type="number" name="registerNo" id="registerNo" hidden>
+                                        <div class="col-4">
+                                            <div><b>Register No: </b><i><span>51234</span></i></div>
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <div class="d-flex justify-content-center">
+                                                <input class="btn btn-success" type="submit" value="Save">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="balangShnong">Balang Shnong</label>
-                                        <select class="form-control" name="balangShnong" id="balangShnong">
-                                            <option value="" selected></option>
-                                        </select>
+                            </form>
+                            <form class="certificate-forms" id="communion-form" style="display: none;">
+                                <div class="container">
+                                    <div class="row m-4">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="h4">Ka Form Communion</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="balangShnong">Balang Shnong</label>
+                                            <input type="text" class="form-control" id="balangShnong" name="balangShnong">
+                                        </div>
+                                        <div class="col-4">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="name">Name and Surname</label>
-                                        <input class="form-control" type="text" id="name">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="name">Name and Surname</label>
+                                            <input class="form-control" type="text" id="name" name="name">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateOfBirth">Date of Birth</label>
+                                            <input class="form-control" type="date" id="dateOfBirth" name="dateOfBirth">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateOfBirth">Date of Birth</label>
-                                        <input class="form-control" type="date" id="dateOfBirth">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="gender">Gender</label>
+                                            <input type="text" class="form-control" id="gender" name="gender">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="currentAddress">Current Address</label>
+                                            <input class="form-control" type="text" id="currentAddress" name="currentAddress">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="gender">Gender</label>
-                                        <select class="form-control" name="gender" id="gender">
-                                            
-                                        </select>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateReceivedCommunion">Date Received Communion On</label>
+                                            <input class="form-control" type="date" id="dateReceivedCommunion" name="dateReceivedCommunion">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateBaptistOn">Date Baptized On</label>
+                                            <input class="form-control" type="date" id="dateBaptistOn" name="dateBaptistOn">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="shnong">Shnong</label>
-                                        <input class="form-control" type="text" id="shnong">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="placeReceivedCommunionAt">Place Received Communion At</label>
+                                            <input class="form-control" type="text" id="placeReceivedCommunionAt" name="placeReceivedCommunionAt">
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateConfirmedOn">Date Confirmed On</label>
-                                        <input class="form-control" type="date" id="dateConfirmedOn">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="fatherName">Father's Name and Surname</label>
+                                            <input class="form-control" type="text" id="fatherName" name="fatherName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="motherName">Mother's Name and Surname</label>
+                                            <input class="form-control" type="text" id="motherName" name="motherName">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateBaptistOn">Date Baptized On</label>
-                                        <input class="form-control" type="date" id="dateBaptistOn">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="godparentName">Sponsor's Name and Surname</label>
+                                            <input class="form-control" type="text" id="godparentName" name="godparentName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="officiatingPriest">Officiating Minister</label>
+                                            <input class="form-control" type="text" id="officiatingPriest" name="officiatingPriest">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="placeConfirmedAt">Place Received Confirmation At</label>
-                                        <input class="form-control" type="text" id="placeConfirmedAt">
+                                    <div class="row m-4 justify-content-center">
+                                        
                                     </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="fatherName">Father's Name and Surname</label>
-                                        <input class="form-control" type="text" id="fatherName">
+                                    <div class="row m-4 justify-content-center">
+                                        <input type="number" name="registerNo" id="registerNo" hidden>
+                                        <div class="col-4">
+                                            <div><b>Register No: </b><i><span>51234</span></i></div>
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="motherName">Mother's Name and Surname</label>
-                                        <input class="form-control" type="text" id="motherName">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4"> 
-                                        <label class="form-label" for="godparentName">Sponsor's Name and Surname</label>
-                                        <input class="form-control" type="text" id="godparentName">
-                                    </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="officiatingPriest">Officiating Minister</label>
-                                        <input class="form-control" type="text" id="officiatingPriest">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <div class="d-flex justify-content-center">
-                                            <input class="btn btn-success" type="submit" value="Save">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <div class="d-flex justify-content-center">
+                                                <input class="btn btn-success" type="submit" value="Save">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="container" id="baptism" style="display: none;">
-                                <div class="row m-4">
-                                    <div class="col">
-                                        <div class="d-flex justify-content-center">
-                                            <div class="h4">Ka Form Baptisma</div>
+                            </form>
+                            <form class="certificate-forms" id="confirmation-form" style="display: none;">
+                                <div class="container">
+                                    <div class="row m-4">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="h4">Ka Form Jingpynskhem</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="balangShnong">Balang Shnong</label>
+                                            <input type="text" class="form-control" id="balangShnong" name="balangShnong">
+                                        </div>
+                                        <div class="col-4">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="name">Name and Surname</label>
+                                            <input class="form-control" type="text" id="name" name="name" name="name">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateOfBirth">Date of Birth</label>
+                                            <input class="form-control" type="date" id="dateOfBirth" name="dateOfBirth" name="dateOfBirth">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="gender">Gender</label>
+                                            <input type="text" class="form-control" id="gender" name="gender">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="shnong">Shnong</label>
+                                            <input class="form-control" type="text" id="shnong" name="shnong" name="shnong">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateConfirmedOn">Date Confirmed On</label>
+                                            <input class="form-control" type="date" id="dateConfirmedOn" name="dateConfirmedOn" name="dateConfirmedOn">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateBaptistOn">Date Baptized On</label>
+                                            <input class="form-control" type="date" id="dateBaptistOn" name="dateBaptistOn" name="dateBaptistOn">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="placeConfirmedAt">Place Received Confirmation At</label>
+                                            <input class="form-control" type="text" id="placeConfirmedAt" name="placeConfirmedAt" name="placeConfirmedAt">
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="fatherName">Father's Name and Surname</label>
+                                            <input class="form-control" type="text" id="fatherName" name="fatherName" name="fatherName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="motherName">Mother's Name and Surname</label>
+                                            <input class="form-control" type="text" id="motherName" name="motherName" name="motherName">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4"> 
+                                            <label class="form-label" for="godparentName">Sponsor's Name and Surname</label>
+                                            <input class="form-control" type="text" id="godparentName" name="godparentName" name="godparentName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="officiatingPriest">Officiating Minister</label>
+                                            <input class="form-control" type="text" id="officiatingPriest" name="officiatingPriest" name="officiatingPriest">
+                                        </div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <input type="number" name="registerNo" id="registerNo" hidden>
+                                        <div class="col-4">
+                                            <div><b>Register No: </b><i><span>51234</span></i></div>
+                                        </div>
+                                        <div class="col-4"></div>
+                                    </div>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <div class="d-flex justify-content-center">
+                                                <input class="btn btn-success" type="submit" value="Save">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="balangShnong">Balang Shnong</label>
-                                        <select class="form-control" name="balangShnong" id="balangShnong">
-                                        </select>
+                            </form>
+                            <form class="certificate-forms" id="baptism-form" style="display: none;">
+                                <div class="container">
+                                    <div class="row m-4">
+                                        <div class="col">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="h4">Ka Form Baptisma</div>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="name">1. Name and Surname</label>
-                                        <input class="form-control" type="text" id="name">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="balangShnong">Balang Shnong</label>
+                                            <input type="text" class="form-control" id="balangShnong" name="balangShnong">
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateOfBirth">2. Date of Birth</label>
-                                        <input class="form-control" type="date" id="dateOfBirth">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="name">1. Name and Surname</label>
+                                            <input class="form-control" type="text" id="name" name="name">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateOfBirth">2. Date of Birth</label>
+                                            <input class="form-control" type="date" id="dateOfBirth" name="dateOfBirth">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="gender">3. Gender</label>
-                                        <select class="form-control" name="gender" id="gender">
-                                        </select>
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="gender">3. Gender</label>
+                                            <input type="text" class="form-control" id="gender" name="gender">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="dateBaptistOn">4. Date Received Baptism On</label>
+                                            <input class="form-control" type="date" id="dateBaptistOn" name="dateBaptistOn">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="dateBaptistOn">4. Date Received Baptism On</label>
-                                        <input class="form-control" type="date" id="dateBaptistOn">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="placeBaptistAt">5. Place Received Baptism At</label>
+                                            <input class="form-control" type="text" id="placeBaptistAt" name="placeBaptistAt">
+                                        </div>
+                                        <div class="col-4">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="placeBaptistAt">5. Place Received Baptism At</label>
-                                        <input class="form-control" type="text" id="placeBaptistAt">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="fatherName">6. Father's Name and Surname</label>
+                                            <input class="form-control" type="text" id="fatherName" name="fatherName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="motherName">7. Mother's Name and Surname</label>
+                                            <input class="form-control" type="text" id="motherName" name="motherName">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="currentAddress">8. Current Address</label>
+                                            <input class="form-control" type="text" id="currentAddress" name="currentAddress">
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="fatherName">6. Father's Name and Surname</label>
-                                        <input class="form-control" type="text" id="fatherName">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="godparentName">9. Sponsor's Name and Surname</label>
+                                            <input class="form-control" type="text" id="godparentName" name="godparentName">
+                                        </div>
+                                        <div class="col-4">
+                                            <label class="form-label" for="officiatingPriest">10. Officiating Minister</label>
+                                            <input class="form-control" type="text" id="officiatingPriest" name="officiatingPriest">
+                                        </div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="motherName">7. Mother's Name and Surname</label>
-                                        <input class="form-control" type="text" id="motherName">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <label class="form-label" for="remarks">11. Remarks</label>
+                                            <input class="form-control" type="text" id="remarks" name="remarks">
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="currentAddress">8. Current Address</label>
-                                        <input class="form-control" type="text" id="currentAddress">
+                                    <div class="row m-4 justify-content-center">
+                                        
                                     </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="godparentName">9. Sponsor's Name and Surname</label>
-                                        <input class="form-control" type="text" id="godparentName">
+                                    <div class="row m-4 justify-content-center">
+                                        <input type="number" name="registerNo" id="registerNo" hidden>
+                                        <div class="col-4">
+                                            <div><b>Register No: </b><i><span>51234</span></i></div>
+                                        </div>
+                                        <div class="col-4"></div>
                                     </div>
-                                    <div class="col-4">
-                                        <label class="form-label" for="officiatingPriest">10. Officiating Minister</label>
-                                        <input class="form-control" type="text" id="officiatingPriest">
-                                    </div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <label class="form-label" for="remarks">11. Remarks</label>
-                                        <input class="form-control" type="text" id="remarks">
-                                    </div>
-                                    <div class="col-4"></div>
-                                </div>
-                                <div class="row m-4 justify-content-center">
-                                    <div class="col-4">
-                                        <div class="d-flex justify-content-center">
-                                            <input class="btn btn-success" type="submit" value="Save">
+                                    <div class="row m-4 justify-content-center">
+                                        <div class="col-4">
+                                            <div class="d-flex justify-content-center">
+                                                <input class="btn btn-success" type="submit" value="Save">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </form>
+                        </div>
+                        <div class="border rounded p-4">
+                            <div class="container p-4">
+                                <img src="images/baptism.png" alt="" class="img-fluid">
+                                <div></div>
                             </div>
                         </div>
                     </div>
